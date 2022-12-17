@@ -1,5 +1,5 @@
 {
-  "name": "Persian Ad Blocker",
+  "name": "Persian Ad Block",
   "version": "1.0.0",
   "description": "Chrome extension to remove Persian ads similar to Yektanet and Sanjagh",
   "background": {
