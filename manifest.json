@@ -1,11 +1,19 @@
 {
   "name": "Persian Ad Blocker",
   "version": "1.0.0",
-  "manifest_version": 2,
+  "description": "Chrome extension to remove Persian ads similar to Yektanet and Sanjagh",
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
-  }
+    "service_worker": "background.js"
+  },
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "script.js"
+      ]
+    }
+  ]
 }
