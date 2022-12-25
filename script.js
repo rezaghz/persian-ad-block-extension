@@ -14,6 +14,10 @@ function removeItems() {
     //sabavision
     const sabavisionClass = document.querySelectorAll("[class*=sabavision]");
     const sabavisionId = document.querySelectorAll("[id*=sabavision]");
+    //najva
+    const najvaClass = document.querySelectorAll("[class*=najva]");
+    const najvaId = document.querySelectorAll("[id*=najva]");
+
 
     [].forEach.call(yektanetClass, function (el) {
         el.innerHTML = "";
@@ -36,6 +40,14 @@ function removeItems() {
     });
 
     [].forEach.call(sabavisionId, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(najvaClass, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(najvaId, function (el) {
         el.innerHTML = "";
     });
 }
