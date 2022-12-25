@@ -1,7 +1,7 @@
 window.onload = (event) => {
     setIntervalX(function () {
         removeItems();
-    }, 500, 10);
+    }, 500, 20);
 };
 
 function removeItems() {
@@ -17,6 +17,9 @@ function removeItems() {
     //najva
     const najvaClass = document.querySelectorAll("[class*=najva]");
     const najvaId = document.querySelectorAll("[id*=najva]");
+    //congoro
+    const congoroClass = document.querySelectorAll("[class*=congoro]");
+    const congoroId = document.querySelectorAll("[id*=congoro]");
 
 
     [].forEach.call(yektanetClass, function (el) {
@@ -48,6 +51,14 @@ function removeItems() {
     });
 
     [].forEach.call(najvaId, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(congoroClass, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(congoroId, function (el) {
         el.innerHTML = "";
     });
 }
