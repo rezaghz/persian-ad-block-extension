@@ -2,4 +2,10 @@
 
 ![](assets/bnr.png)
 
-Chrome extension to remove Persian ads similar to Yektanet and Sanjagh
+افزونه کروم برای حذف تبلیغات های مزاحم در وب فارسی مثل یکتانت ، سنجاق و ... 
+
+## سایت های پشتیبانی شده 
+
+1. یکتانت
+2. سنجاق
+3. صبا ویژن
