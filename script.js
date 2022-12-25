@@ -4,6 +4,7 @@ window.onload = (event) => {
     }, 500, 20);
 };
 
+
 function removeItems() {
     // yektanet
     const yektanetClass = document.querySelectorAll("[class*=yn-]");
