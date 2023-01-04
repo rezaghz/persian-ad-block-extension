@@ -21,7 +21,9 @@ function removeItems() {
     //congoro
     const congoroClass = document.querySelectorAll("[class*=congoro]");
     const congoroId = document.querySelectorAll("[id*=congoro]");
-
+    //mediaad
+    const mediaadClass = document.querySelectorAll("[class*=congoro]");
+    const mediaadId = document.querySelectorAll("[id*=congoro]");
 
     [].forEach.call(yektanetClass, function (el) {
         el.innerHTML = "";
@@ -60,6 +62,14 @@ function removeItems() {
     });
 
     [].forEach.call(congoroId, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(mediaadClass, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(mediaadId, function (el) {
         el.innerHTML = "";
     });
 }
