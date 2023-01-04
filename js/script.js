@@ -22,8 +22,8 @@ function removeItems() {
     const congoroClass = document.querySelectorAll("[class*=congoro]");
     const congoroId = document.querySelectorAll("[id*=congoro]");
     //mediaad
-    const mediaadClass = document.querySelectorAll("[class*=congoro]");
-    const mediaadId = document.querySelectorAll("[id*=congoro]");
+    const mediaadClass = document.querySelectorAll("[class*=mediaad]");
+    const mediaadId = document.querySelectorAll("[id*=mediaad]");
 
     [].forEach.call(yektanetClass, function (el) {
         el.innerHTML = "";
