@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
+    <style>
+        body {
+            font-family: Vazirmatn, Tahoma, serif;
+            padding: 5px 30px;
+            width: 180px;
+            background-color: white;
+            cursor: default;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 29px;
+            height: 16px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #CCCCCC;
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 13px;
+            width: 13px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #FFFFFF;
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+
+        input:checked + .slider {
+            background-color: #368BD6;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            transform: translateX(13px);
+        }
+
+        .slider {
+            border-radius: 16px;
+        }
+
+        .slider:before {
+            border-radius: 50%;
+        }
+
+        .form-group {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group .title {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body dir="rtl">
+<div class="header" style="display: flex;
+    justify-content: space-evenly;
+    align-items: center;">
+    <h3 style="text-align: center">Persian Ad Block</h3>
+    <img src="./assets/icons/icon64.png" width="32" height="32" alt="">
+</div>
+<hr style="padding: 0;margin: 0">
+<div class="form-group">
+    <label class="switch">
+        <input type="checkbox" id="status" checked>
+        <span class="slider"></span>
+    </label>
+    <span class="title">فعالسازی افزونه</span>
+</div>
+
+<div class="form-group">
+    <label class="switch">
+        <input type="checkbox" id="show_gif" checked>
+        <span class="slider"></span>
+    </label>
+    <span class="title">عدم نمایش تصاویر gif</span>
+</div>
+
+<script src="./js/popup.js"></script>
+</body>
+</html>

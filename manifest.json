@@ -4,7 +4,7 @@
   "description": "Chrome extension to remove Persian ads similar to Yektanet and Sanjagh",
   "author": "Reza Ghasemzadeh",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "js/background.js"
   },
   "manifest_version": 3,
   "icons": {
@@ -13,13 +13,19 @@
     "64": "assets/icons/icon64.png",
     "128": "assets/icons/icon128.png"
   },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
       "js": [
-        "script.js"
+        "js/script.js"
       ]
     }
   ]
