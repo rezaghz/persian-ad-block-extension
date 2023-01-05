@@ -4,7 +4,7 @@ window.onload = (event) => {
         if (data.status === undefined || data.status == true) {
             setIntervalX(function () {
                 removeItems();
-            }, 500, 20);
+            }, 500, 40);
         }
     });
 };

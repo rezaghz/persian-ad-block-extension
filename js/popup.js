@@ -1,4 +1,5 @@
 const statusEl = document.getElementById('status');
+const website = document.getElementById('website');
 
 chrome.storage.local.get('status', (data) => {
     if (data.status === undefined) {
@@ -15,4 +16,10 @@ statusEl.addEventListener('change', (event) => {
     } else {
         chrome.storage.local.set({status: false});
     }
+})
+
+
+website.addEventListener('click', (e) => {
+    chrome.tabs.create({url: "https://rezaghz.com"});
+    return false;
 })
