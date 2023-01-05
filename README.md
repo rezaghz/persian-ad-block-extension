@@ -4,6 +4,12 @@
 
 افزونه کروم برای حذف تبلیغات های مزاحم در وب فارسی مثل یکتانت ، سنجاق و ... 
 
+## نصب اکستنشن 
+
+برای دانلود و نصب اکستنشن می تونید به این لینک مراجعه کنید
+
+https://chrome.google.com/webstore/detail/persian-ad-block/nfmpepfaaheflaoppoccedjonobcflml?hl=fa-IR
+
 ## سایت های پشتیبانی شده 
 
 1. یکتانت

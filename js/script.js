@@ -1,9 +1,13 @@
 window.onload = (event) => {
-    setIntervalX(function () {
-        removeItems();
-    }, 500, 20);
+    chrome.storage.local.get('status', (data) => {
+        console.log(data.status);
+        if (data.status === undefined || data.status == true) {
+            setIntervalX(function () {
+                removeItems();
+            }, 500, 20);
+        }
+    });
 };
-
 
 function removeItems() {
     // yektanet

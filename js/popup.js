@@ -1,17 +1,18 @@
-const statusEl = document.getElementById('status')
+const statusEl = document.getElementById('status');
 
 chrome.storage.local.get('status', (data) => {
-    if (data === undefined) {
-        chrome.storage.local.set({status : false});
+    if (data.status === undefined) {
+        chrome.storage.local.set({status: true});
+    } else {
+        statusEl.checked = data.status;
     }
 });
 
-alert(s);
 
 statusEl.addEventListener('change', (event) => {
     if (event.currentTarget.checked) {
-        alert('checked');
+        chrome.storage.local.set({status: true});
     } else {
-        alert('not checked');
+        chrome.storage.local.set({status: false});
     }
 })
