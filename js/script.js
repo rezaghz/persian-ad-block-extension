@@ -1,6 +1,5 @@
 window.onload = (event) => {
     chrome.storage.local.get('status', (data) => {
-        console.log(data.status);
         if (data.status === undefined || data.status == true) {
             setIntervalX(function () {
                 removeItems();
