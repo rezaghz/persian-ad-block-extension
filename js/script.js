@@ -9,72 +9,35 @@ window.onload = (event) => {
 };
 
 function removeItems() {
-    // yektanet
-    const yektanetClass = document.querySelectorAll("[class*=yn-]");
-    const yektanetId = document.querySelectorAll("[id*=yn-]");
-    //sanjagh
-    const sanjaghClass = document.querySelectorAll("[class*=sanjagh]");
-    const sanjaghId = document.querySelectorAll("[id*=sanjagh]");
-    //sabavision
-    const sabavisionClass = document.querySelectorAll("[class*=sabavision]");
-    const sabavisionId = document.querySelectorAll("[id*=sabavision]");
-    //najva
-    const najvaClass = document.querySelectorAll("[class*=najva]");
-    const najvaId = document.querySelectorAll("[id*=najva]");
-    //congoro
-    const congoroClass = document.querySelectorAll("[class*=congoro]");
-    const congoroId = document.querySelectorAll("[id*=congoro]");
-    //mediaad
-    const mediaadClass = document.querySelectorAll("[class*=mediaad]");
-    const mediaadId = document.querySelectorAll("[id*=mediaad]");
+    
+    const mustBeRemoved = [
+        
+        // yektanet
+        ...document.querySelectorAll("[class*=yn-]"),
+        ...document.querySelectorAll("[id*=yn-]"),
+        
+        //sanjagh
+        ...document.querySelectorAll("[class*=sanjagh]"),
+        ...document.querySelectorAll("[id*=sanjagh]"),
+        
+        //najva
+        ...document.querySelectorAll("[class*=najva]"),
+        ...document.querySelectorAll("[id*=najva]"),
+        
+        //congoro
+        ...document.querySelectorAll("[class*=congoro]"),
+        ...document.querySelectorAll("[id*=congoro]"),
+        
+        //mediaad
+        ...document.querySelectorAll("[class*=mediaad]"),
+        ...document.querySelectorAll("[id*=mediaad]"),
+        
+    ];
 
-    [].forEach.call(yektanetClass, function (el) {
+    [].forEach.call(mustBeRemoved, function (el) {
         el.innerHTML = "";
     });
 
-    [].forEach.call(yektanetId, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(sanjaghClass, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(sanjaghId, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(sabavisionClass, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(sabavisionId, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(najvaClass, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(najvaId, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(congoroClass, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(congoroId, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(mediaadClass, function (el) {
-        el.innerHTML = "";
-    });
-
-    [].forEach.call(mediaadId, function (el) {
-        el.innerHTML = "";
-    });
 }
 
 function setIntervalX(callback, delay, repetitions) {
