@@ -28,6 +28,10 @@ function removeItems() {
     const mediaadClass = document.querySelectorAll("[class*=mediaad]");
     const mediaadId = document.querySelectorAll("[id*=mediaad]");
 
+    //kaprila
+    const kaprilaClass = document.querySelectorAll("[class*=kaprila]");
+    const kaprilaId = document.querySelectorAll("[id*=kaprila]");
+
     [].forEach.call(yektanetClass, function (el) {
         el.innerHTML = "";
     });
@@ -73,6 +77,14 @@ function removeItems() {
     });
 
     [].forEach.call(mediaadId, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(kaprilaClass, function (el) {
+        el.innerHTML = "";
+    });
+
+    [].forEach.call(kaprilaId, function (el) {
         el.innerHTML = "";
     });
 }
