@@ -30,7 +30,7 @@ https://chrome.google.com/webstore/detail/persian-ad-block/nfmpepfaaheflaoppocce
 
 <p align="center">
  <a href="https://www.coffeete.ir/rezaghz" target="_blank">
-        <img src="https://user-images.githubusercontent.com/36597017/190224192-e2d29a3e-2b60-43ce-b66c-e477eb6f6e9d.jpg" width="250" alt="Donation via Daramet">
+        <img src="https://user-images.githubusercontent.com/36597017/190224192-e2d29a3e-2b60-43ce-b66c-e477eb6f6e9d.jpg" width="250" alt="Donation via Coffeete">
     </a>
 </p>
 
