@@ -13,7 +13,7 @@
 
 https://chrome.google.com/webstore/detail/persian-ad-block/nfmpepfaaheflaoppoccedjonobcflml?hl=fa-IR
 
-## سایت های پشتیبانی شده 
+## سرویس های تبلیغاتی پشتیبانی شده 
 
 1. یکتانت
 2. سنجاق
@@ -21,6 +21,7 @@ https://chrome.google.com/webstore/detail/persian-ad-block/nfmpepfaaheflaoppocce
 4. نجوا
 5. کانگورو
 6. مدیااد
+7. کاپریلا
 
 ##  عملکرد 
 ![](assets/scr1.gif)
