@@ -25,6 +25,7 @@
         "<all_urls>"
       ],
       "js": [
+        "js/jquery.js",
         "js/script.js"
       ]
     }

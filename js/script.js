@@ -13,12 +13,18 @@ if (window.location.href.includes('google.com/search?q=')) {
     for (let index in allTags) {
         if (allTags[index] instanceof HTMLElement) {
             if (allTags[index].innerHTML.includes('aparat.com/v/')) {
-                let showTag = `<span style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: 15px;display: block">نمایش سریع</span>`
+                let url = allTags[index].getElementsByTagName('div')[0].getElementsByTagName('a')[0].href;
+                let urlParts = new URL(url).pathname.split("/");
+                let id = urlParts[2];
+                let showTag = `<span class="aparat-preview" style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: 15px;display: block" data-id="${id}">نمایش سریع</span>`;
                 allTags[index].insertAdjacentHTML('beforeend', showTag);
             }
         }
         //window.location.href = "https://www.aparat.com/video/video/embed/videohash/jp4B8/vt/frame";
     }
+    $(".aparat-preview").on('click', function () {
+        console.log($(this).data('id'));
+    })
 }
 
 function removeItems() {
