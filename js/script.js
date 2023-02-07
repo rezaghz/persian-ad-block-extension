@@ -6,7 +6,20 @@ window.onload = (event) => {
             }, 500, 40);
         }
     });
-};
+}
+
+if (window.location.href.includes('google.com/search?q=')) {
+    let allTags = document.getElementsByTagName('video-voyager');
+    for (let index in allTags) {
+        if (allTags[index] instanceof HTMLElement) {
+            if (allTags[index].innerHTML.includes('aparat.com/v/')) {
+                let showTag = `<span style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: 15px;display: block">نمایش سریع</span>`
+                allTags[index].insertAdjacentHTML('beforeend', showTag);
+            }
+        }
+        //window.location.href = "https://www.aparat.com/video/video/embed/videohash/jp4B8/vt/frame";
+    }
+}
 
 function removeItems() {
     // yektanet
