@@ -13,6 +13,13 @@
 
 https://chrome.google.com/webstore/detail/persian-ad-block/nfmpepfaaheflaoppoccedjonobcflml?hl=fa-IR
 
+## نمایش سریع ویدئوهای آپارات در سرچ گوگل
+
+در نسخه جدید گزینه نمایش سریع در صفحه سرچ گوگل برای ویدئو های آپارات هم اضافه شده که از همون صفحه گوگل ویدئوهاتونو بدون تبلیغات ببینید
+
+![](assets/aparat.gif)
+
+
 ## سرویس های تبلیغاتی پشتیبانی شده 
 
 1. یکتانت
