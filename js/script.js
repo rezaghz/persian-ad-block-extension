@@ -72,12 +72,6 @@ function removeItems() {
         //kaprila
         "[class*=kaprila]",
         "[id*=kaprila]",
-        //Adv
-        "[class*=adv]",
-        "[id*=adv]",
-        //Ads
-        "[class*=ads]",
-        "[id*=ads]"
     ];
 
     items.forEach(function (item) {
