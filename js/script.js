@@ -11,14 +11,16 @@ chrome.storage.local.get('status', (data) => {
 
 function addModalToAparat() {
     if (window.location.href.includes('google.com/search?q=')) {
-        let allTags = document.getElementsByTagName('video-voyager');
+        let allTags = document.getElementById('rso').children;
+        console.log(allTags);
         for (let index in allTags) {
             if (allTags[index] instanceof HTMLElement) {
+                console.log(allTags[index]);
                 if (allTags[index].innerHTML.includes('aparat.com/v/')) {
                     let url = allTags[index].getElementsByTagName('div')[0].getElementsByTagName('a')[0].href;
                     let urlParts = new URL(url).pathname.split("/");
                     let id = urlParts[2];
-                    let showTag = `<span class="pab-aparat-preview" style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: 5px;margin-bottom:15px;display: block" data-id="${id}">نمایش سریع</span>`;
+                    let showTag = `<span class="pab-aparat-preview" style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: -20px;display: block" data-id="${id}">نمایش سریع</span>`;
                     allTags[index].insertAdjacentHTML('beforeend', showTag);
                 }
             }
