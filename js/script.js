@@ -12,10 +12,8 @@ chrome.storage.local.get('status', (data) => {
 function addModalToAparat() {
     if (window.location.href.includes('google.com/search?q=')) {
         let allTags = document.getElementById('rso').children;
-        console.log(allTags);
         for (let index in allTags) {
             if (allTags[index] instanceof HTMLElement) {
-                console.log(allTags[index]);
                 if (allTags[index].innerHTML.includes('aparat.com/v/')) {
                     let url = allTags[index].getElementsByTagName('div')[0].getElementsByTagName('a')[0].href;
                     let urlParts = new URL(url).pathname.split("/");

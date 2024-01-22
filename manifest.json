@@ -1,6 +1,6 @@
 {
   "name": "Persian Ad Block",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Chrome extension to remove Persian ads similar to Yektanet and Sanjagh",
   "author": "Reza Ghasemzadeh",
   "background": {
@@ -16,7 +16,17 @@
   "action": {
     "default_popup": "popup.html"
   },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules_1.json"
+      }
+    ]
+  },
   "permissions": [
+    "declarativeNetRequest",
     "storage"
   ],
   "content_scripts": [
