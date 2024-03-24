@@ -4,8 +4,8 @@ chrome.storage.local.get('status', (data) => {
             setIntervalX(function () {
                 removeItems();
             }, 500, 40);
+            addModalToAparat();
         }
-        addModalToAparat();
     }
 });
 
@@ -80,6 +80,20 @@ function removeItems() {
             el.innerHTML = "";
         });
     });
+
+
+    // remove fucking ads of varzesh3.com
+    if (window.location.href.includes("varzesh3.com")){
+        const links = document.querySelectorAll('a');
+        // Iterate through the NodeList of <a> tags
+        links.forEach(link => {
+            // Check if the href attribute contains the specified domain
+            if (link.href.includes('biz.varzesh3.com')) {
+                // If it does, remove the <a> tag from its parent
+                link.parentNode.removeChild(link);
+            }
+        });
+    }
 }
 
 function setIntervalX(callback, delay, repetitions) {
