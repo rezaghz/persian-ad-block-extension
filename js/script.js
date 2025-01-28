@@ -11,15 +11,21 @@ chrome.storage.local.get('status', (data) => {
 
 function addModalToAparat() {
     if (window.location.href.includes('google.com/search?q=')) {
-        let allTags = document.getElementById('rso').children;
-        for (let index in allTags) {
-            if (allTags[index] instanceof HTMLElement) {
-                if (allTags[index].innerHTML.includes('aparat.com/v/')) {
-                    let url = allTags[index].getElementsByTagName('div')[0].getElementsByTagName('a')[0].href;
-                    let urlParts = new URL(url).pathname.split("/");
+        const searchResults = Array.from(document.querySelectorAll("div.g"))
+            .filter((result) => !result.parentElement?.closest("div.g")); // Filter out nested search results
+
+        for (const [index, result] of searchResults.entries()) {
+            const linkElement = result.querySelector("a");
+
+            if (linkElement) {
+                const resultUrl = linkElement.href;
+                console.log(resultUrl);
+                if (resultUrl.includes('aparat.com/v/')) {
+                    let urlParts = new URL(resultUrl).pathname.split("/");
                     let id = urlParts[2];
                     let showTag = `<span class="pab-aparat-preview" style="color :#1a0dab;font-size:14px;cursor:pointer;margin-top: -20px;display: block" data-id="${id}">نمایش سریع</span>`;
-                    allTags[index].insertAdjacentHTML('beforeend', showTag);
+                    result.parentNode.insertAdjacentHTML('beforeend', showTag);
+                    console.log(result,id);
                 }
             }
             //window.location.href = "https://www.aparat.com/video/video/embed/videohash/jp4B8/vt/frame";
@@ -72,6 +78,9 @@ function removeItems() {
         //kaprila
         "[class*=kaprila]",
         "[id*=kaprila]",
+        //tavoos
+        "[class*=tavoos]",
+        "[id*=tavoos]",
     ];
 
     items.forEach(function (item) {
@@ -83,7 +92,7 @@ function removeItems() {
 
 
     // remove fucking ads of varzesh3.com
-    if (window.location.href.includes("varzesh3.com")){
+    if (window.location.href.includes("varzesh3.com")) {
         const links = document.querySelectorAll('a');
         // Iterate through the NodeList of <a> tags
         links.forEach(link => {
