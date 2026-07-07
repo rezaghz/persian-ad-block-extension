@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Persian Ad Block</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
     <style>
+        :root {
+            color-scheme: light;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
             font-family: Vazirmatn, Tahoma, serif;
-            padding: 5px 30px;
-            width: 180px;
-            background-color: white;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            color: #3f1111;
             cursor: default;
+        }
+
+        .popup-shell {
+            width: 260px;
+            padding: 12px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(220, 38, 38, 0.16);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(120, 16, 16, 0.14);
+            padding: 14px;
+            backdrop-filter: blur(10px);
+        }
+
+        .brand {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .brand-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.28);
+        }
+
+        .title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0 12px;
         }
 
         .switch {
             position: relative;
             display: inline-block;
-            width: 29px;
-            height: 16px;
+            width: 38px;
+            height: 22px;
+            flex-shrink: 0;
         }
 
         .switch input {
@@ -29,84 +89,196 @@
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #CCCCCC;
-            -webkit-transition: .3s;
-            transition: .3s;
+            inset: 0;
+            background: #cbd5e1;
+            transition: 0.3s ease;
+            border-radius: 999px;
         }
 
         .slider:before {
-            position: absolute;
             content: "";
-            height: 13px;
-            width: 13px;
-            left: 2px;
-            bottom: 2px;
-            background-color: #FFFFFF;
-            -webkit-transition: .3s;
-            transition: .3s;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            transition: 0.3s ease;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
         }
 
         input:checked + .slider {
-            background-color: #368BD6;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
         }
 
         input:checked + .slider:before {
-            -webkit-transform: translateX(13px);
-            -ms-transform: translateX(13px);
-            transform: translateX(13px);
+            transform: translateX(16px);
         }
 
-        .slider {
-            border-radius: 16px;
-        }
-
-        .slider:before {
-            border-radius: 50%;
-        }
-
-        .form-group {
+        .toggle-text {
             display: flex;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 3px;
         }
 
-        .form-group .title {
-            margin-right: 10px;
+        .toggle-label {
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .form-group .footer {
-            margin: 10px auto 0 auto;
-            font-weight: 500;
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            width: fit-content;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: #e2f7ea;
+            color: #15803d;
+        }
+
+        .status-pill.inactive {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .site-card {
+            background: linear-gradient(135deg, #fff7f7 0%, #ffeaea 100%);
+            border: 1px solid rgba(220, 38, 38, 0.12);
+            border-radius: 14px;
+            padding: 10px;
+            margin: 4px 0 10px;
+        }
+
+        .site-label {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .site-value {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f172a;
+            word-break: break-all;
+            margin-bottom: 3px;
+        }
+
+        .site-status {
+            font-size: 11px;
+            color: #475569;
+        }
+
+        .primary-btn {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            padding: 9px 10px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            color: #3f1111;
+            background: linear-gradient(135deg, #ffffff 0%, #fff3f3 100%);
+            border: 1px solid rgba(220, 38, 38, 0.22);
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 16px rgba(220, 38, 38, 0.12);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.18);
+        }
+
+        .primary-btn:active {
+            transform: scale(0.98);
+        }
+
+        .primary-btn.active {
+            color: white;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            border-color: transparent;
+        }
+
+        .primary-btn.pulse {
+            animation: pulse-btn 0.35s ease;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        .footer-link {
             cursor: pointer;
             text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
+        .spark {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #dc2626;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
+            animation: sparkle 1.6s infinite;
+        }
+
+        @keyframes pulse-btn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(0.9); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
     </style>
 </head>
 <body dir="rtl">
-<div class="header" style="display: flex;
-    justify-content: space-evenly;
-    align-items: center;">
-    <h3 style="text-align: center">Persian Ad Block</h3>
-    <img src="./assets/icons/icon64.png" width="32" height="32" alt="">
-</div>
-<hr style="padding: 0;margin: 0">
-<div class="form-group">
-    <label class="switch">
-        <input type="checkbox" id="status" checked>
-        <span class="slider"></span>
-    </label>
-    <span class="title">فعالسازی افزونه</span>
-</div>
+    <div class="popup-shell">
+        <div class="card">
+            <div class="brand">
+                <div>
+                    <div class="title">Persian Ad Block</div>
+                    <div class="subtitle">حذف آگهی‌های مزاحم با حس مدرن</div>
+                </div>
+                <div class="brand-badge">🛡️</div>
+            </div>
 
-<div class="form-group">
-    <span class="footer" id="website">rezaghz.com</span>
-</div>
+            <div class="toggle-row">
+                <label class="switch">
+                    <input type="checkbox" id="status" checked>
+                    <span class="slider"></span>
+                </label>
+                <div class="toggle-text">
+                    <div class="toggle-label">افزونه روشن</div>
+                    <div id="status-chip" class="status-pill">در حال کار</div>
+                </div>
+            </div>
 
-<script src="./js/popup.js"></script>
+            <div class="site-card">
+                <div class="site-label">سایت فعلی</div>
+                <div id="current-site" class="site-value">—</div>
+                <div id="site-status" class="site-status">در حال بارگذاری…</div>
+            </div>
+
+            <button id="ignore-site" class="primary-btn" type="button">نادیده گرفتن این سایت</button>
+
+            <div class="footer-row">
+                <span class="footer-link" id="website">بازدید از وب‌سایت سازنده</span>
+                <span class="spark"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/popup.js"></script>
 </body>
 </html>

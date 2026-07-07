@@ -1,5 +1,21 @@
-chrome.storage.local.get('status', (data) => {
-    if (data.status === undefined || data.status == true) {
+function normalizeHost(value) {
+    try {
+        return new URL(value).hostname.toLowerCase().replace(/^www\./, '');
+    } catch (error) {
+        return '';
+    }
+}
+
+function isSiteIgnored(ignoredSites) {
+    const currentHost = normalizeHost(window.location.href);
+    return Array.isArray(ignoredSites) && currentHost !== '' && ignoredSites.includes(currentHost);
+}
+
+chrome.storage.local.get(['status', 'ignoredSites'], (data) => {
+    const statusEnabled = data.status === undefined || data.status === true;
+    const ignoredSites = Array.isArray(data.ignoredSites) ? data.ignoredSites : [];
+
+    if (statusEnabled && !isSiteIgnored(ignoredSites)) {
         window.onload = (event) => {
             setIntervalX(function () {
                 removeItems();
